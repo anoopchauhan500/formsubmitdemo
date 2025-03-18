@@ -1,9 +1,13 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
- <style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Form</title>
+<style>
 /* General Styles */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
   background: linear-gradient(to right, #667eea, #764ba2);
   display: flex;
   justify-content: center;
@@ -12,13 +16,13 @@ body {
   margin: 0;
 }
 
-/* Container Styling */
+/* Form Container */
 .container {
   width: 40%;
   background: white;
-  padding: 25px;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   text-align: center;
   animation: fadeIn 1s ease-in-out;
 }
@@ -26,21 +30,34 @@ body {
 /* Heading */
 h1 {
   color: #333;
-  margin-bottom: 15px;
   font-size: 28px;
+  margin-bottom: 20px;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
+}
+
+/* Form Group */
+.form-group {
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+/* Labels */
+label {
+  font-weight: bold;
+  color: #555;
+  display: block;
+  margin-bottom: 5px;
 }
 
 /* Input Fields */
 input, textarea {
   width: 100%;
   padding: 12px;
-  margin-top: 10px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 6px;
   font-size: 16px;
-  transition: 0.3s;
+  transition: all 0.3s ease-in-out;
 }
 
 /* Hover & Focus Effects */
@@ -58,10 +75,10 @@ button {
   background: #667eea;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   font-size: 18px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: all 0.3s ease-in-out;
 }
 
 button:hover {
@@ -77,15 +94,34 @@ button:hover {
 </style>
 </head>
 <body>
+
 <div class="container">
   <h1>Contact Us</h1>
   <form target="_blank" action="https://formsubmit.co/anoopchauhan500@gmail.com" method="POST">
-    <input type="text" name="name" class="form-control" placeholder="Full Name" required>
-    <input type="email" name="email" class="form-control" placeholder="Email Address" required>
-    <input type="text" name="contact" class="form-control" placeholder="Contact Number" required>
-    <textarea placeholder="Your Message" class="form-control" name="message" rows="5" required></textarea>
+    
+    <div class="form-group">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" class="form-control" placeholder="Enter your full name" required>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required>
+    </div>
+
+    <div class="form-group">
+      <label for="contact">Contact Number</label>
+      <input type="text" id="contact" name="contact" class="form-control" placeholder="Enter your contact number" required>
+    </div>
+
+    <div class="form-group">
+      <label for="message">Your Message</label>
+      <textarea id="message" name="message" class="form-control" placeholder="Type your message here..." rows="5" required></textarea>
+    </div>
+
     <button type="submit">Submit Form</button>
   </form>
 </div>
+
 </body>
 </html>
